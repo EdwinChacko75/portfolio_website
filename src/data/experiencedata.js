@@ -13,7 +13,7 @@ const experienceData = [
         company: "VACS Ltd.",
         title: "Calibration Engineer Intern",
         description: `description.`,
-        logo: 'https://vacs.calibrations.ca/wp-content/uploads/2023/02/VacsCalLogo.png'
+        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/vacsLogo.png'
     },
     {
         id: 3,
