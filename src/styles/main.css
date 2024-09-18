@@ -6,7 +6,7 @@
   --bg-experience-dark: #464541;
   --bg-projects-dark: #201b1a;
   --text-primary-dark: #d4d4d4;
-  --accent-primary-dark: #eedbaf;
+  --accent-primary-dark: orange;
   --black-dark: white;
   --white-dark: #000000;
   /* Light mode variables */
@@ -162,7 +162,9 @@ body, html {
   padding-left: 30px;
   list-style: none;
 }
-
+.timeline-section-title{
+  color: var(--black);
+}
 .timeline::before {
   content: '';
   position: absolute;
@@ -225,14 +227,21 @@ body, html {
 }
 
 .timeline-logo {
-  margin-left: auto;
-  padding-left: 20px;
+  /* margin-left: auto; */
+  margin-left: 20px;
+  border-radius: 1em;
+  background-color: black;
+  width: fit-content;
+  height: fit-content ;
+
 }
 
 .timeline-logo img {
   display: block;
   max-width: 150px;
   height: auto;
+  border-radius: 1em;
+
 }
 
 .timeline-description {
@@ -251,6 +260,7 @@ body, html {
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .tech-stack {

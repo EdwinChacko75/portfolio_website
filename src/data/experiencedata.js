@@ -5,7 +5,7 @@ const experienceData = [
         company: "McMaster University - ChemAI Lab",
         title: "Machine Learning Researcher",
         description: `description.`,
-        logo: 'https://upload.wikimedia.org/wikipedia/en/5/53/McMaster_University_logo.svg'
+        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/mac_logo.png'
     },
     {
         id: 2,
@@ -13,15 +13,15 @@ const experienceData = [
         company: "VACS Ltd.",
         title: "Calibration Engineer Intern",
         description: `description.`,
-        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/vacsLogo.png'
+        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/vacs_logo.png'
     },
     {
         id: 3,
         date: "Graduation Expected May 2027",
         company: "University of Toronto",
-        title: "Bachelor of Applied Science in Engineering Science majoring in Machine Intelligence",
+        title: "BASc. in Engineering Science, Machine Intelligence Option",
         description: `Relevant Coursework: Machine Learning, Data Structures and Algorithms, Natural Language Computing, Computational Linguistics`,
-        logo: 'https://maplelab.net/wp-content/uploads/2016/09/UofTlogo.png'
+        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/uoft_logo.png'
     }
     // Add more experiences here
 ];

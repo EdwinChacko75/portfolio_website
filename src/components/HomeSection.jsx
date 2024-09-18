@@ -44,12 +44,15 @@ function HomeSection() {
         </div>
         <div className="col-md-6">
         <h1><span className="typing-animation">Hi, I'm Edwin Chacko.</span></h1>
-          <p>bio</p>
+          <p className='bio-text'>
+            I'm a machine learning researcher and embedded systems enthusiast with experience in ML and systems programming, 
+            currently exploring the intersection of AI and hardware.
+          </p>
           <div className="button-and-icons">
             <div className="social-links">
               <a href="https://github.com/EdwinChacko75" className="social-link" data-tooltip="Github" target="_blank" rel="noopener noreferrer"><FaGithub /><span>Github</span></a>
               <a href="https://www.linkedin.com/in/edwin-chacko/" className="social-link" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedin /><span>LinkedIn</span></a>
-              <a href="mailto:edwinreji75@gmail.com" className="social-link" data-tooltip="edwinreji75@gmail.com"><FaAt /><span>Contact</span></a>
+              <a href="mailto:edwinreji75@gmail.com" className="social-link" data-tooltip="edwin.chacko@mail.utoronto.ca"><FaAt /><span>Contact</span></a>
               <a href={resumepdf} className="social-link" data-tooltip="Resume" target="_blank" rel="noopener noreferrer"><FaScroll /><span>Resume</span></a>
             </div>
           </div>
