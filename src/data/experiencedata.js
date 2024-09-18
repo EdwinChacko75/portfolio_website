@@ -5,7 +5,7 @@ const experienceData = [
         company: "McMaster University - ChemAI Lab",
         title: "Machine Learning Researcher",
         description: `description.`,
-        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/mac_logo.png'
+        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/mac_logo.jpg'
     },
     {
         id: 2,
