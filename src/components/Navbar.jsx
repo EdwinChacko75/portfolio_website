@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DarkModeToggle from './dark_mode'; 
 
 function Navbar() {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
@@ -27,6 +28,8 @@ function Navbar() {
           <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
           <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
         </ul>
+        <DarkModeToggle /> {/* Add the dark mode toggle here */}
+
       </div>
     </nav>
   );

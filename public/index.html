@@ -9,4 +9,17 @@
 <body>
     <div id="root"></div>
 </body>
+<footer>
+    <script>
+        (function() {
+          var darkMode = localStorage.getItem('darkMode');
+          
+          if (darkMode === null || darkMode === 'true') {
+            document.documentElement.classList.add('dark-mode');
+          } else {
+            document.documentElement.classList.add('light-mode');
+          }
+        })();
+      </script>
+</footer>
 </html>

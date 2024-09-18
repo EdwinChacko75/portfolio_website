@@ -80,7 +80,36 @@ function AboutSection() {
         </div>
         
       </div>
- 
+      {/* <h3 className="centered-heading">Research Interests and Current Projects</h3>
+      <div className="row mb-4">
+        <div className="col-md-12">
+          <h4>Research Interests:</h4>
+          <ul>
+            <li>[Research Interest 1]</li>
+            <li>[Research Interest 2]</li>
+            <li>[Research Interest n]</li>
+          </ul>
+
+          <h4>Current Projects:</h4>
+          <ul>
+            <li>
+              <strong>[Project Title 1]:</strong> [Title]
+            </li>
+            <li>
+              <strong>[Project Title 2]:</strong> [title]
+            </li>
+          </ul>
+
+          <h4>Publications:</h4>
+          <ul>
+            <li>
+              <strong>Pending:</strong> Chacko, Sondhi, et al. " A multi-modal approach for molecule
+              elucidation using IR and NMR data." AI4Mat-NeruIPS 2024. December 2024.
+            </li>
+            
+          </ul>
+        </div>
+      </div> */}
     </section>
   );
 }

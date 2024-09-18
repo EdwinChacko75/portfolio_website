@@ -1,27 +1,117 @@
 /* Root Variables: Define color scheme for light mode */
 :root {
-  --bg-primary: #f8f9fa;
-  --bg-secondary: #e9ecef;
-  --bg-experience: #dee2e6;
-  --bg-projects: #ced4da;
-  --text-primary: #333;
-  --accent-primary: #ef4914;
-  --black: #000000;
-  --white: white;
+  /* Dark mode variables */
+  --bg-primary-dark: #2b2625;
+  --bg-secondary-dark: #3d3533;
+  --bg-experience-dark: #464541;
+  --bg-projects-dark: #201b1a;
+  --text-primary-dark: #d4d4d4;
+  --accent-primary-dark: #eedbaf;
+  --black-dark: white;
+  --white-dark: #000000;
+  /* Light mode variables */
+  --bg-primary-light: #f8f9fa;
+  --bg-secondary-light: #e9ecef;
+  --bg-experience-light: #dee2e6;
+  --bg-projects-light: #ced4da;
+  --text-primary-light: #333;
+  --accent-primary-light: #ef4914;
+  --black-light: #000000;
+  --white-light: white;
+
+
+  /* Default to dark mode */  
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --bg-experience: var(--bg-experience-dark);
+  --bg-projects: var(--bg-projects-dark);
+  --text-primary: var(--text-primary-dark);
+  --accent-primary: var(--accent-primary-dark);
+  --black: var(--black-dark);
+  --white: var(--white-dark);
+  --transition-time: 0.3s;
 }
 
-/* Dark Mode Variables (commented out for now)
-:root {
-  --bg-primary: #2b2625;
-  --bg-secondary: #3d3533;
-  --bg-experience: #464541;
-  --bg-projects: #201b1a;
-  --text-primary: #d4d4d4;
-  --accent-primary: #eedbaf;
-  --white: #000000;
-  --black: white;
+/* Dark mode class */
+.dark-mode {
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --bg-experience: var(--bg-experience-light);
+  --bg-projects: var(--bg-projects-light);
+  --text-primary: var(--text-primary-light);
+  --accent-primary: var(--accent-primary-light);
+  --black: var(--black-light);
+  --white: var(--white-light);
 }
-*/
+/* Dark Mode Toggle Styles */
+.dark-mode-toggle {
+  position: relative;
+  width: 4em;
+  height: 2em;
+  background-color: #333;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle.light-mode {
+  background-color: #f0f0f0;
+}
+
+.dark-mode-toggle.light-mode::after {
+  transform: translateX(2em);
+}
+
+.dark-mode-toggle .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.dark-mode-toggle .moon {
+  right: 0.2em;
+  opacity: 1;
+}
+
+.dark-mode-toggle .sun {
+  left: 0.2em;
+  opacity: 0;
+}
+
+.dark-mode-toggle.light-mode .moon {
+  opacity: 0;
+}
+
+.dark-mode-toggle.light-mode .sun {
+  opacity: 1;
+}
+.navbar .dark-mode-toggle {
+  margin-left: auto;
+  margin-right: 2.5em;
+}
+.navbar {
+  background-color: var(--bg-primary) !important;
+  transition: background-color var(--transition-time) ease-out, color var(--transition-time) ease-out;
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-primary)
+}
 
 /* Global Styles */
 body, html {
@@ -31,6 +121,8 @@ body, html {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   scroll-behavior: smooth;
+  transition: background-color var(--transition-time) ease-out, color var(--transition-time) ease-out;
+
 }
 
 /* Section Styles */
@@ -42,11 +134,27 @@ body, html {
 }
 
 /* Individual Section Background Colors */
-#home { background: var(--bg-primary); position: relative; }
-#about { background: var(--bg-secondary); }
-#experience { background: var(--bg-experience); }
-#projects { background: var(--bg-projects); }
-#contact { background: var(--bg-primary); position: relative; }
+#home { 
+  background: var(--bg-primary); 
+  position: relative;   
+  transition: background-color var(--transition-time) ease-out, color var(--transition-time) ease-out;
+}
+#about { 
+  background: var(--bg-secondary);   
+  transition: background-color var(--transition-time) ease-out, color var(--transition-time) ease-out;
+}
+#experience { 
+  background: var(--bg-experience);   
+  transition: background-color var(--transition-time) ease-out, color var(--transition-time) ease-out;
+}
+#projects { 
+  background: var(--bg-projects);   
+  transition: background-color var(--transition-time) ease-out, color var(--transition-time) ease-out;
+}
+#contact { background: var(--bg-primary); 
+  position: relative;  
+  transition: background-color var(--transition-time) ease-out, color var(--transition-time) ease-out;
+}
 
 /* Timeline Styles */
 .timeline {
@@ -314,7 +422,7 @@ body, html {
 
 .col-md-6 {
   z-index: 4;
-  margin-top: 20px;
+  margin-top: 4em;
 }
 
 /* Solar System Animation Styles */
@@ -482,85 +590,14 @@ body, html {
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
-
-/* Certifications Styles */
-/*.certifications-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.certifications-scroll {
+/* Footer styling */
+.footer{
   display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.certification-card {
-  min-width: 200px;
-  background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 0 10px;
-  overflow: hidden;
-  width: 200px;
-  cursor: pointer;
-  display: inline-block;
-  white-space: normal;
-  margin-right: 15px;
-  height: 255px;
-}
-
-.certification-image {
-  width: 100%;
-  display: block;
-}
-
-.certification-title {
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 8px;
-  background-color: #f0f0f0;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.certification-label {
-  display: block;
-  text-align: center;
+  padding: 10px 20px;
   font-size: 0.8rem;
-  padding: 4px;
-  background-color: #e0e0e0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-top: 1px solid var(--bg-primary);
+  justify-content: space-between;
+  align-items: center;
 }
-.scroll-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #fff;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  user-select: none;
-  z-index: 10;
-}
-
-.scroll-button.left {
-  left: 0;
-}
-
-.scroll-button.right {
-  right: 0;
-}
-
-.certification-card-link {
-  text-decoration: none; 
-  color: inherit; 
-}
-
-
-
-@media (max-width: 768px) {
-  .certification-card {
-    min-width: 150px; 
-  }
-}
-*/
