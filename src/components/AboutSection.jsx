@@ -80,7 +80,7 @@ function AboutSection() {
         </div>
         
       </div>
-      {/* <h3 className="centered-heading">Research Interests and Current Projects</h3>
+      {/* <h3 className="centered-heading">Publications and Research Interests</h3>
       <div className="row mb-4">
         <div className="col-md-12">
           <h4>Research Interests:</h4>
