@@ -4,47 +4,36 @@ import { FaGithub, FaLink } from 'react-icons/fa';
 function ProjectCard({ project }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleFlip = (event) => {
-    event.stopPropagation();
-    setIsFlipped((prev) => !prev);
-  };
-
-  const handleLinkClick = (event) => {
-    event.stopPropagation();
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
   };
 
   return (
-    <div className={`card-container ${isFlipped ? 'is-flipped' : ''}`} >
+    <div className={`card-container ${isFlipped ? 'is-flipped' : ''}`} onClick={handleFlip}>
       <div className="project-card">
         {/* Front of the card */}
         <div className="card-front">
-          <h5 className="card-title">{project.title}</h5>
-          <div className="project-links" onClick={handleLinkClick}>
-            {project.github_url && (
-              <a href={project.github_url} target="_blank" rel="noopener noreferrer" className="project-btn">
-                <FaGithub /> {/* GitHub Icon */}
-              </a>
-            )}
-            {project.live_url && (
-              <a href={project.live_url} target="_blank" rel="noopener noreferrer" className="project-btn">
-                <FaLink /> {/* External Link Icon */}
-              </a>
-            )}
-          </div>
-          {/* Toggle switch for flipping the card */}
-          <div className="toggle-switch" onClick={handleFlip}>
-            <input type="checkbox" checked={isFlipped} readOnly />
-            <span className="switch"></span>
+          <img src={project.image} alt={project.title} className="project-image" />
+          <div className="card-content">
+            <h5 className="card-title">{project.title}</h5>
+            <div className="tech-stack">{project.tech}</div>
+
           </div>
         </div>
         {/* Back of the card */}
         <div className="card-back">
-          <div className="tech-heading">{"Made with"}</div>
-          <div className="tech-stack">{project.tech}</div>
-          {/* Toggle switch for flipping the card */}
-          <div className="toggle-switch" onClick={handleFlip}>
-            <input type="checkbox" checked={isFlipped} readOnly />
-            <span className="switch"></span>
+          <p className="card-description">{project.description}</p>
+          <div className="project-links">
+            {project.github_url && (
+              <a href={project.github_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="project-btn">
+                <FaGithub /> GitHub
+              </a>
+            )}
+            {project.live_url && (
+              <a href={project.live_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="project-btn">
+                <FaLink /> Live Demo
+              </a>
+            )}
           </div>
         </div>
       </div>

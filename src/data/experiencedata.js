@@ -10,7 +10,7 @@ const experienceData = [
     {
         id: 2,
         date: "May 2023 - August 2023",
-        company: "VACS Ltd.",
+        company: "VACS Calibrations Ltd.",
         title: "Calibration Engineer Intern",
         description: `description.`,
         logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/vacs_logo.png'
