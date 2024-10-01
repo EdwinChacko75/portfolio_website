@@ -43,17 +43,17 @@
 const projectData = [
     {
       id: 1,
-      title: "Project 1",
+      title: "Spectro",
       description: "A brief description of Project 111brief description of Project 111brief description of Project 111brief description of Project 111brief description of Project 111brief description of Project 111",
-      image: "https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/tf.png", 
-      tech: "TensorFlow",
+      image: "https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/main_diagram_md.png", 
+      tech: "TensorFlow, PyTorch",
       github_url: "https://github.com/yourusername/project1",
       live_url: "https://project1-demo.com",
   
     },
     {
         id: 1,
-        title: "Project 2",
+        title: "Ultimate Chess",
         description: "A brief description of Project 111brief description of Project 111brief description of Project 111brief description of Project 111brief description of Project 111brief description of Project 111",
         image: "https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/cuda.png", 
         tech: "CUDA",

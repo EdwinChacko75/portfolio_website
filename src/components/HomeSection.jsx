@@ -1,6 +1,6 @@
 import React from 'react';
 import faceImage from '../assets/headshot.png'; // Import your face image
-import resumepdf from '../assets/edwin.chacko.pdf'; // Import your resume pdf
+import resumepdf from '../assets/edwin_chacko_ml.pdf'; // Import your resume pdf
 import { FaGithub, FaLinkedin, FaAt, FaScroll } from 'react-icons/fa'; // Import icons
 import torchLogo from '../assets/torch.png'; 
 import cLogo from '../assets/C.png'; 

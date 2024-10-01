@@ -13,7 +13,7 @@ function ProjectCard({ project }) {
       <div className="project-card">
         {/* Front of the card */}
         <div className="card-front">
-          <img src={project.image} alt={project.title} className="project-image" />
+          <img src={project.image} alt={project.title} className="project-image" id={project.title}/>
           <div className="card-content">
             <h5 className="card-title">{project.title}</h5>
             <div className="tech-stack">{project.tech}</div>

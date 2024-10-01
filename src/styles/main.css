@@ -29,11 +29,14 @@
   --accent-primary: var(--accent-primary-dark);
   --black: var(--black-dark);
   --white: var(--white-dark);
+
   --transition-time: 0.3s;
+  --invert:1;
 }
 
 /* Dark mode class */
 .dark-mode {
+  --invert:0;
   --bg-primary: var(--bg-primary-light);
   --bg-secondary: var(--bg-secondary-light);
   --bg-experience: var(--bg-experience-light);
@@ -263,10 +266,17 @@ body, html {
   cursor: pointer;
 }
 .project-image{
+  padding: 0.5em;
   width: auto;
   height: 12em;
   margin-bottom: 1em;
   margin-top: 1em;
+}
+#Spectro{
+  filter: invert(var(--invert));
+  transition: filter var(--transition-time);
+
+
 }
 .tech-stack {
   text-align: center;
@@ -277,6 +287,7 @@ body, html {
   margin-bottom: 20px;
 }
 .card-description{
+  
   margin-left: 2em;
   margin-right: 2em;
   text-align: center;
@@ -347,6 +358,8 @@ body, html {
   transform-style: preserve-3d;
   position: relative;
   border: 0.1em solid var(--accent-primary);
+  user-select: none;
+
 }
 
 .card-inner {
