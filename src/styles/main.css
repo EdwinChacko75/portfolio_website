@@ -135,7 +135,11 @@ body, html {
   align-items: center;
   flex-direction: column;
 }
-
+#about {
+  min-height: 0vh !important;
+  max-height: 1000vh !important;
+  height: 70vh !important;
+}
 /* Individual Section Background Colors */
 #home { 
   background: var(--bg-primary); 
@@ -249,6 +253,7 @@ body, html {
 
 .timeline-description {
   margin-bottom: 15px;
+  color: var(--text-primary);
 }
 
 /* Navbar Styles */
@@ -272,12 +277,13 @@ body, html {
   margin-bottom: 1em;
   margin-top: 1em;
 }
+
 #Spectro{
-  filter: invert(var(--invert));
+  /* filter: invert(var(--invert)); */
+  background-color: white;
   transition: filter var(--transition-time);
-
-
 }
+
 .tech-stack {
   text-align: center;
   padding: 0 20px;
@@ -523,7 +529,10 @@ body, html {
   justify-content: flex-start;
   gap: 15px;
 }
-
+#about {
+  height: 800px; /* Hardcoded height */
+  overflow-y: auto; /* Adds a scrollbar if content exceeds the height */
+}
 .social-links {
   display: flex;
   gap: 5px;
@@ -626,9 +635,27 @@ body, html {
 /* Centered Heading Style */
 .centered-heading {
   text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+/* Publications List Styles */
+.publications-list {
+  margin-top: 1em;
+  padding-left: 20px;
+  font-size: large;
+}
+.publications-list p {
+  text-indent: -20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.publications-heading{
+  text-align: center;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  padding-top: 2em;
 }
+
 /* Footer styling */
 .footer{
   display: flex;

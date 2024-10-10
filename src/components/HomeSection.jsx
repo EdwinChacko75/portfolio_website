@@ -45,8 +45,8 @@ function HomeSection() {
         <div className="col-md-6">
         <h1><span className="typing-animation">Hi, I'm Edwin Chacko.</span></h1>
           <p className='bio-text'>
-            I'm a machine learning researcher and embedded systems enthusiast with experience in ML and systems programming, 
-            currently exploring the intersection of AI and hardware.
+          I'm a machine learning researcher and embedded systems enthusiast with experience in ML and 
+          systems programming currently exploring the intersection of AI and hardware!
           </p>
           <div className="button-and-icons">
             <div className="social-links">

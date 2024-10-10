@@ -34,6 +34,13 @@ function ProjectCard({ project }) {
                 <FaLink /> Live Demo
               </a>
             )}
+            {project.coming_soon && (
+              <a className="project-btn">
+               Demo and Github Coming Soon!
+            </a>
+            )
+            }
+
           </div>
         </div>
       </div>
