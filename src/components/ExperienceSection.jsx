@@ -18,9 +18,11 @@ function ExperienceSection() {
               <div className = "timeline-description">{item.description}</div>
               {/* <p>{item.description}</p> */}
             </div>
-            <div className="timeline-logo">
-              <img src={item.logo} alt="Company Logo" />
-            </div>
+            {item.logo && (
+              <div className="timeline-logo">
+                <img src={item.logo} alt={`${item.company} logo`} />
+              </div>
+            )}
           </div>
         ))}
       </div>

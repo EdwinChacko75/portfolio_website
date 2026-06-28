@@ -4,10 +4,10 @@
   "description": "A personal portfolio website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "client": "react-scripts start",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "dev": "npm run start"
   },
   "author": "",
   "license": "ISC",

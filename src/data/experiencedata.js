@@ -1,29 +1,41 @@
+import macLogo from '../assets/mac_logo.jpg';
+import pocketHealthLogo from '../assets/pockethealth_logo.jpg';
+import utmistLogo from '../assets/utmist_logo.svg';
+import uoftLogo from '../assets/uoft_logo.png';
+
 const experienceData = [
     {
         id: 1,
-        date: "April 2024 - Present",
-        company: "McMaster University - ChemAI Lab",
-        title: "Machine Learning Researcher",
-        description: `Led a cross-disciplinary team of chemists and engineers to develop a deep learning model for molecule elucidation, consulting Dr. Kylie Luksa for domain-specific knowledge in spectroscopy. Built and optimized a custom GPU rig, enabling the training of the model on 15,000 molecular samples over 20 hours, significantly reducing computational bottlenecks. Designed a multimodal architecture combining a fine-tuned CNN with an MLP for IR images alongside an LLM2Vec-based NMR text encoder, achieving 93% accuracy in molecule prediction and a 91% F1 score for functional group detection. Implemented SMOTE, data normalization, and augmentation techniques to reduce class imbalance by 30%, improving model generalization. Set the foundation for future deployment as a real-time tool for chemical analysis, with potential applications in drug discovery and material science `,
-        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/mac_logo.jpg'
+        date: "May 2025 - Present",
+        company: "PocketHealth",
+        title: "AI/ML Engineer, PEY",
+        description: `Building production AI systems for medical workflows. Developed document-understanding pipelines that combine OCR, LLM extraction, and task-specific models for requisition booking; built RAG systems with over 95% human-evaluated correctness; designed a cross-attention organ classifier with 91% F1 that increased automated processing throughput by 30%; and improved imaging segmentation by pseudo-labeling 30,000+ additional samples, raising Dice score by 10%.`,
+        logo: pocketHealthLogo
     },
     {
         id: 2,
-        date: "May 2023 - August 2023",
-        company: "VACS Calibrations Ltd.",
-        title: "Calibration Engineer Intern",
-        description: `Calibrated electronic and mechanical equipment, following the IEE and ISO17025 standards. Performed statistical analysis including standard deviation, uncertainty propagation, and regression methods to validate calibration accuracy and reliability, improving accuracy by 20%. Improved process efficiency by 10% and measurement precision by 15% utilizing insights developed from calibration data.`,
-        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/vacs_logo.png'
+        date: "May 2024 - Present",
+        company: "McMaster University - ChemAI Lab",
+        title: "Machine Learning Researcher",
+        description: `Founded and led Spectro, a multimodal scientific ML system for molecular structure elucidation from IR and NMR data. Co-first-authored the NeurIPS 2024 AI4Mat workshop paper, achieved 93% molecule prediction accuracy, contributed to j-IR-vis spectroscopy embeddings, and initiated a new research direction around representation learning for retrosynthesis.`,
+        logo: macLogo
     },
     {
         id: 3,
-        date: "Graduation Expected May 2027",
+        date: "January 2025 - June 2025",
+        company: "UTMIST - Flow To Learn",
+        title: "Machine Learning Engineer",
+        description: `Developed flow-matching models for neural-network weight generation, exploring robust initialization and few-shot performance under distribution shift. Implemented LoRA-based weight generation and variational-autoencoder baselines for efficient model adaptation.`,
+        logo: utmistLogo
+    },
+    {
+        id: 4,
+        date: "September 2022 - May 2027",
         company: "University of Toronto",
         title: "BASc. in Engineering Science, Machine Intelligence Option",
-        description: `Relevant Coursework: Machine Learning, Data Structures and Algorithms, Natural Language Computing, Computational Linguistics`,
-        logo: 'https://raw.githubusercontent.com/EdwinChacko75/portfolio_website/master/src/assets/uoft_logo.png'
+        description: `Relevant coursework includes Artificial Intelligence, Machine Learning, Neural Networks and Deep Learning, Natural Language Computing, Computational Linguistics, Image Understanding, Matrix Algebra and Optimization, Decision Support Systems, and Distributed Systems.`,
+        logo: uoftLogo
     }
-    // Add more experiences here
 ];
 
 export default experienceData;

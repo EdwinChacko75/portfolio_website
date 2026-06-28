@@ -1,21 +1,21 @@
 /* Root Variables: Define color scheme for light mode */
 :root {
   /* Dark mode variables */
-  --bg-primary-dark: #2b2625;
-  --bg-secondary-dark: #3d3533;
-  --bg-experience-dark: #464541;
-  --bg-projects-dark: #201b1a;
-  --text-primary-dark: #d4d4d4;
-  --accent-primary-dark: orange;
+  --bg-primary-dark: #101820;
+  --bg-secondary-dark: #16222e;
+  --bg-experience-dark: #1f2933;
+  --bg-projects-dark: #111827;
+  --text-primary-dark: #e8eef4;
+  --accent-primary-dark: #20c7b5;
   --black-dark: white;
   --white-dark: #000000;
   /* Light mode variables */
-  --bg-primary-light: #f8f9fa;
-  --bg-secondary-light: #e9ecef;
-  --bg-experience-light: #dee2e6;
-  --bg-projects-light: #ced4da;
-  --text-primary-light: #333;
-  --accent-primary-light: #ef4914;
+  --bg-primary-light: #f8fafc;
+  --bg-secondary-light: #eaf2f8;
+  --bg-experience-light: #e2e8f0;
+  --bg-projects-light: #dbeafe;
+  --text-primary-light: #1f2937;
+  --accent-primary-light: #0f766e;
   --black-light: #000000;
   --white-light: white;
 
@@ -138,7 +138,6 @@ body, html {
 #about {
   min-height: 0vh !important;
   max-height: 1000vh !important;
-  height: 70vh !important;
 }
 /* Individual Section Background Colors */
 #home { 
@@ -187,6 +186,7 @@ body, html {
   margin-bottom: 20px;
   display: flex;
   align-items: flex-start;
+  gap: 20px;
 }
 
 .timeline-dot {
@@ -235,19 +235,25 @@ body, html {
 
 .timeline-logo {
   /* margin-left: auto; */
-  margin-left: 20px;
-  border-radius: 1em;
-  background-color: black;
-  width: fit-content;
-  height: fit-content ;
+  border-radius: 8px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
 
 }
 
 .timeline-logo img {
   display: block;
-  max-width: 150px;
+  max-width: 100%;
+  max-height: 100%;
   height: auto;
-  border-radius: 1em;
+  object-fit: contain;
+  border-radius: 8px;
 
 }
 
@@ -265,6 +271,39 @@ body, html {
 }
 
 /* Project Card Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 380px));
+  justify-content: center;
+  align-content: center;
+  gap: 2.25rem;
+  min-height: calc(100vh - 160px);
+  padding: 1rem 0 3rem;
+}
+
+.project-grid-item {
+  width: 100%;
+}
+
+.projects-grid--count-1,
+.projects-grid--count-2 {
+  grid-template-columns: repeat(var(--project-columns, 1), minmax(min(100%, 340px), 420px));
+}
+
+.projects-grid--count-2 {
+  --project-columns: 2;
+}
+
+.projects-grid--count-3 {
+  grid-template-columns: repeat(2, minmax(min(100%, 320px), 390px));
+}
+
+.projects-grid--count-3 .project-grid-item:nth-child(3) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 390px);
+}
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -272,8 +311,10 @@ body, html {
 }
 .project-image{
   padding: 0.5em;
+  max-width: 92%;
   width: auto;
   height: 12em;
+  object-fit: contain;
   margin-bottom: 1em;
   margin-top: 1em;
 }
@@ -293,9 +334,10 @@ body, html {
   margin-bottom: 20px;
 }
 .card-description{
-  
-  margin-left: 2em;
-  margin-right: 2em;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-left: 1.25em;
+  margin-right: 1.25em;
   text-align: center;
 }
 .tech-heading {
@@ -310,19 +352,21 @@ body, html {
 .project-links {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   padding-top: 1rem;
 }
 
 .project-btn {
   color: var(--text-primary);
   text-decoration: none;
-  border-radius: 0.8em;
-  margin: 10px 15px;
-  padding: 4px 7px 4px 7px;
+  border-radius: 8px;
+  margin: 6px 8px;
+  padding: 6px 10px;
   background-color: var(--accent-primary);
   color: var(--white);
   transition: color 0.2s ease-in-out, transform 0.2s ease;
-  font-size: 1.3em;
+  font-size: 1rem;
 
 }
 
@@ -353,8 +397,29 @@ body, html {
   perspective: 1000px;
   margin-bottom: 2rem;
   width: 100%;
-  height: 300px;
+  height: 380px;
+  position: relative;
+  cursor: pointer;
 
+}
+
+.card-container::before {
+  content: '';
+  position: absolute;
+  inset: -44px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--accent-primary) 82%, transparent) 0%, color-mix(in srgb, var(--accent-primary) 34%, transparent) 34%, transparent 72%);
+  opacity: 0;
+  filter: blur(28px);
+  transform: scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.card-container:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .project-card {
@@ -365,7 +430,12 @@ body, html {
   position: relative;
   border: 0.1em solid var(--accent-primary);
   user-select: none;
+  z-index: 1;
 
+}
+
+.card-container:hover .project-card {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-primary) 58%, transparent), 0 18px 42px color-mix(in srgb, var(--accent-primary) 34%, transparent);
 }
 
 .card-inner {
@@ -465,7 +535,7 @@ body, html {
   overflow: hidden;
 }
 
-.col-md-6 {
+#home .col-md-6 {
   z-index: 4;
   margin-top: 4em;
 }
@@ -494,7 +564,8 @@ body, html {
 .orbit-logo {
   position: absolute;
   width: 40px;
-  height: auto;
+  height: 40px;
+  object-fit: contain;
   opacity: 0.9;
 }
 
@@ -504,13 +575,14 @@ body, html {
 .orbit-3 { transform-origin: 20% -150px; animation: rotate1 8s linear infinite; }
 .orbit-4 { transform-origin: 20% -150px; animation: rotate 7s linear infinite; }
 .orbit-5 { transform-origin: 20% -150px; animation: rotate1 6s linear infinite; }
-.orbit-6 { transform-origin: 20% -150px; animation: rotate 5s linear infinite; }
+.orbit-6 { transform-origin: 20% -150px; animation: rotate 7s linear infinite; }
 .orbit-7 { transform-origin: 20% -150px; animation: rotate 5.5s linear infinite; }
 .orbit-8 { transform-origin: 20% -150px; animation: rotate 6.5s linear infinite; }
 .orbit-9 { transform-origin: 20% -150px; animation: rotate1 12s linear infinite; }
 .orbit-10 { transform-origin: 20% -150px; animation: rotate 11s linear infinite; }
 .orbit-11 { transform-origin: 20% -150px; animation: rotate1 13s linear infinite; }
 .orbit-12 { transform-origin: 20% -150px; animation: rotate1 10s linear infinite; }
+.orbit-13 { transform-origin: 20% -150px; animation: rotate 14s linear infinite; }
 
 @keyframes rotate {
   from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
@@ -530,8 +602,8 @@ body, html {
   gap: 15px;
 }
 #about {
-  height: 800px; /* Hardcoded height */
-  overflow-y: auto; /* Adds a scrollbar if content exceeds the height */
+  height: auto;
+  overflow-y: visible;
 }
 .social-links {
   display: flex;
@@ -606,10 +678,10 @@ body, html {
 /* Tech Skills Styles */
 .tech-skills {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   margin-top: 20px;
   padding: 0 10px;
 }
@@ -619,6 +691,10 @@ body, html {
   flex-direction: column;
   align-items: center;
   white-space: nowrap;
+  justify-content: center;
+  min-width: 72px;
+  min-height: 72px;
+  position: relative;
 }
 
 .tech-item img {
@@ -627,9 +703,47 @@ body, html {
   margin-bottom: 5px;
 }
 
-.tech-item span {
-  font-size: 0.9rem;
-  text-align: center;
+.tech-icon {
+  color: var(--text-primary);
+  font-size: 3rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tech-item:hover .tech-icon {
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.tech-item:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--text-primary);
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.focus-area-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.5rem auto 0;
+  max-width: 920px;
+}
+
+.focus-area-pill {
+  border: 1px solid var(--accent-primary);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  padding: 0.45rem 0.7rem;
 }
 
 /* Centered Heading Style */
@@ -644,6 +758,11 @@ body, html {
   padding-left: 20px;
   font-size: large;
 }
+
+.publications-list a {
+  color: var(--accent-primary);
+  font-weight: 700;
+}
 .publications-list p {
   text-indent: -20px;
   padding-left: 20px;
@@ -653,7 +772,58 @@ body, html {
   text-align: center;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  padding-top: 2em;
+  padding-top: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .projects-grid,
+  .projects-grid--count-1,
+  .projects-grid--count-2,
+  .projects-grid--count-3 {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .projects-grid--count-3 .project-grid-item:nth-child(3) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .solar-system {
+    width: 320px;
+    height: 320px;
+  }
+
+  .profile-image {
+    width: 210px;
+    height: 210px;
+  }
+
+  .orbit-logo {
+    width: 28px;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg) translateX(122px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(122px) rotate(-360deg); }
+  }
+
+  @keyframes rotate1 {
+    from { transform: rotate(0deg) translateX(145px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(145px) rotate(-360deg); }
+  }
+
+  .timeline-item {
+    display: block;
+  }
+
+  .timeline-logo {
+    margin-top: 12px;
+  }
+
+  .card-container {
+    height: 420px;
+  }
 }
 
 /* Footer styling */

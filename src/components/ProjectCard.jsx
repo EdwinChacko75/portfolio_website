@@ -31,13 +31,13 @@ function ProjectCard({ project }) {
             )}
             {project.live_url && (
               <a href={project.live_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="project-btn">
-                <FaLink /> Live Demo
+                <FaLink /> {project.live_label || 'Live Demo'}
               </a>
             )}
             {project.coming_soon && (
-              <a className="project-btn">
+              <span className="project-btn">
                Demo and Github Coming Soon!
-            </a>
+              </span>
             )
             }
 
