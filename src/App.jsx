@@ -22,10 +22,29 @@ function App() {
       return undefined;
     }
 
+    const isAtDocumentEdge = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+
+      return scrollTop <= 2 || maxScroll - scrollTop <= 2;
+    };
+
+    const isInViewport = element => {
+      const rect = element.getBoundingClientRect();
+
+      return rect.bottom >= 0 && rect.top <= window.innerHeight;
+    };
+
+    const setFadeVisibility = (element, isVisible) => {
+      const shouldForceVisibleAtEdge = isAtDocumentEdge() && isInViewport(element);
+
+      element.classList.toggle('is-visible', isVisible || shouldForceVisibleAtEdge);
+    };
+
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          entry.target.classList.toggle('is-visible', entry.isIntersecting);
+          setFadeVisibility(entry.target, entry.isIntersecting);
         });
       },
       {
@@ -34,9 +53,29 @@ function App() {
       }
     );
 
-    fadeElements.forEach(element => observer.observe(element));
+    const handleScrollEdge = () => {
+      if (!isAtDocumentEdge()) {
+        return;
+      }
 
-    return () => observer.disconnect();
+      fadeElements.forEach(element => {
+        if (isInViewport(element)) {
+          element.classList.add('is-visible');
+        }
+      });
+    };
+
+    fadeElements.forEach(element => observer.observe(element));
+    handleScrollEdge();
+
+    window.addEventListener('scroll', handleScrollEdge, { passive: true });
+    window.addEventListener('resize', handleScrollEdge);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScrollEdge);
+      window.removeEventListener('resize', handleScrollEdge);
+    };
   }, []);
 
   return (
