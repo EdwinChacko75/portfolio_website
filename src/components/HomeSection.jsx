@@ -17,7 +17,7 @@ function HomeSection() {
   return (
     <section id="home" className="container mt-5">
       <div className="row align-items-center">
-        <div className="col-md-6 text-center">
+        <div className="col-md-6 text-center scroll-fade">
           
           <div className="solar-system">
             <img src={faceImage} alt="Edwin Chacko" className="profile-image" />
@@ -36,7 +36,7 @@ function HomeSection() {
           </div>
           
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 scroll-fade">
         <h1><span className="typing-animation">Hi, I'm Edwin Chacko.</span></h1>
           <p className='bio-text'>
           I'm a UofT Engineering Science student building ML systems for medical AI,

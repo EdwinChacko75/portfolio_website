@@ -128,6 +128,41 @@ body, html {
 
 }
 
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.scroll-fade:nth-child(2),
+.project-grid-item.scroll-fade:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.timeline-item.scroll-fade:nth-child(3),
+.project-grid-item.scroll-fade:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.timeline-item.scroll-fade:nth-child(4),
+.project-grid-item.scroll-fade:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Section Styles */
 .section {
   min-height: 100vh;
@@ -684,6 +719,8 @@ body, html {
   gap: 1.25rem;
   margin-top: 20px;
   padding: 0 10px;
+  position: relative;
+  z-index: 3;
 }
 
 .tech-item {
@@ -726,7 +763,8 @@ body, html {
   border-radius: 6px;
   font-size: 0.78rem;
   white-space: nowrap;
-  z-index: 10;
+  z-index: 20;
+  pointer-events: none;
 }
 
 .focus-area-list {
@@ -736,6 +774,8 @@ body, html {
   gap: 0.6rem;
   margin: 1.5rem auto 0;
   max-width: 920px;
+  position: relative;
+  z-index: 1;
 }
 
 .focus-area-pill {

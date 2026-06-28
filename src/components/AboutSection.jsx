@@ -43,22 +43,22 @@ const focusAreas = [
 function AboutSection() {
   return (
     <section id="about" className="container mt-5">
-      <h3 className="centered-heading">Technical Skills</h3>
-      <div className="tech-skills" aria-label="Technical skills">
+      <h3 className="centered-heading scroll-fade">Technical Skills</h3>
+      <div className="tech-skills scroll-fade" aria-label="Technical skills">
         {coreSkills.map(({ name, Icon }) => (
           <div className="tech-item" key={name} data-tooltip={name} aria-label={name} title={name}>
             <Icon className="tech-icon" aria-hidden="true" />
           </div>
         ))}
       </div>
-      <div className="focus-area-list">
+      <div className="focus-area-list scroll-fade">
         {focusAreas.map(area => (
           <span className="focus-area-pill" key={area}>{area}</span>
         ))}
       </div>
 
-      <h3 className="publications-heading">Publications</h3>
-      <div className="row mb-4">
+      <h3 className="publications-heading scroll-fade">Publications</h3>
+      <div className="row mb-4 scroll-fade">
         <div className="col-md-12">
           <div className="publications-list">
             <p>

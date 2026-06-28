@@ -4,10 +4,10 @@ import experienceData from '../data/experiencedata.js'; // Adjusted import path
 function ExperienceSection() {
   return (
     <section id="experience" className="container mt-5">
-      <h2 className='timeline-section-title'>Experience Timeline</h2>
+      <h2 className='timeline-section-title scroll-fade'>Experience Timeline</h2>
       <div className="timeline">
         {experienceData.map(item => (
-          <div key={item.id} className="timeline-item">
+          <div key={item.id} className="timeline-item scroll-fade">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
               <div className="timeline-date">{item.date}</div>

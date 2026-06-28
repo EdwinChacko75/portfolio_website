@@ -7,10 +7,10 @@ function ProjectsSection() {
 
   return (
     <section id="projects" className="container mt-5">
-      <h2 className="text-center mb-4">Projects</h2>
+      <h2 className="text-center mb-4 scroll-fade">Projects</h2>
       <div className={`projects-grid projects-grid--count-${projectCount}`}>
         {projectData.map(item => (
-          <div key={item.id} className="project-grid-item">
+          <div key={item.id} className="project-grid-item scroll-fade">
             <ProjectCard project={item} />
           </div>
         ))}
